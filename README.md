@@ -3,4 +3,5 @@ Proyecto de Base de datos linkeada un programa de Java
 
 Diagrama E/R de la base de datos:
 
-<img width="903" height="526" alt="image" src="https://github.com/user-attachments/assets/803d94a0-8ad7-4394-9cf9-ebffa4c33d7c" />
+<img width="483" height="679" alt="image" src="https://github.com/user-attachments/assets/057da6b0-8b86-4935-a54a-669e86875e2f" />
+
