@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="bpmstudio-bpm-inspector-state">
+    <option name="statesByFile">
+      <map>
+        <entry key="$PROJECT_DIR$/TallerMecanico/src/VentanaPrincipal.form">
+          <value>
+            <FileInspectorState>
+              <option name="statesByElementId">
+                <map>
+                  <entry key="Field_09vfse6">
+                    <value>
+                      <ExpandedItems>
+                        <option name="items">
+                          <option value="General" />
+                          <option value="Condition" />
+                        </option>
+                      </ExpandedItems>
+                    </value>
+                  </entry>
+                  <entry key="Field_0h7rz1k">
+                    <value>
+                      <ExpandedItems>
+                        <option name="items">
+                          <option value="General" />
+                        </option>
+                      </ExpandedItems>
+                    </value>
+                  </entry>
+                  <entry key="Field_0ha4f7a">
+                    <value>
+                      <ExpandedItems>
+                        <option name="items">
+                          <option value="General" />
+                        </option>
+                      </ExpandedItems>
+                    </value>
+                  </entry>
+                  <entry key="Form_1g1r6wf">
+                    <value>
+                      <ExpandedItems>
+                        <option name="items">
+                          <option value="General" />
+                        </option>
+                      </ExpandedItems>
+                    </value>
+                  </entry>
+                  <entry key="Form_1hvs114">
+                    <value>
+                      <ExpandedItems>
+                        <option name="items">
+                          <option value="General" />
+                        </option>
+                      </ExpandedItems>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </FileInspectorState>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/TallerMecanico/src/projecto.form">
+          <value>
+            <FileInspectorState>
+              <option name="statesByElementId">
+                <map>
+                  <entry key="Field_1026171">
+                    <value>
+                      <ExpandedItems>
+                        <option name="items">
+                          <option value="General" />
+                        </option>
+                      </ExpandedItems>
+                    </value>
+                  </entry>
+                  <entry key="Field_13onbgq">
+                    <value>
+                      <ExpandedItems>
+                        <option name="items">
+                          <option value="General" />
+                        </option>
+                      </ExpandedItems>
+                    </value>
+                  </entry>
+                  <entry key="Form_1g1r6wf">
+                    <value>
+                      <ExpandedItems>
+                        <option name="items">
+                          <option value="General" />
+                        </option>
+                      </ExpandedItems>
+                    </value>
+                  </entry>
+                  <entry key="Form_1se6368">
+                    <value>
+                      <ExpandedItems />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </FileInspectorState>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
