@@ -2,9 +2,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class proyecto extends JFrame {
+public class VentanaGuardarCliente extends JFrame {
     private JPanel panel1;
-    private JButton button1;
     // Campos de texto para que el usuario escriba
     private JTextField txtId;
     private JTextField txtNombre;
@@ -12,7 +11,7 @@ public class proyecto extends JFrame {
     private JTextField txtEmail;
     private JButton btnGuardar;
 
-    public proyecto() {
+    public VentanaGuardarCliente() {
         // Configuración básica de la ventana
         setContentPane(panel1);
         setTitle("Añadir Cliente");

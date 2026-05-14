@@ -7,7 +7,7 @@ public class Main {
 
         ConexionMySQL conexion = new ConexionMySQL("root", "", "mecanico");
 
-        proyecto ventana = new proyecto();
+        VentanaGuardarCliente ventana = new VentanaGuardarCliente();
         ventana.setVisible(true);
 
     }
