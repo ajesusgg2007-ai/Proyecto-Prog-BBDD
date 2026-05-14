@@ -2,18 +2,20 @@ package VentanaTitulo;
 
 import VentanaGuardarCliente.VentanaGuardarCliente;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class VentanaTitulo extends JFrame {
     private JPanel panelPrincipal;
     private JButton btnabrirGuardarCliente;
 
     public VentanaTitulo() {
-        setTitle("Menú Principal");
+        setTitle("Mecánicos Salazar");
         setContentPane(panelPrincipal);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 300);
+        setSize(800, 600);
         setLocationRelativeTo(null);
 
         // Acción del botón
@@ -32,5 +34,23 @@ public class VentanaTitulo extends JFrame {
                  setLocationRelativeTo(null);
             }
         });
+    }
+
+    private void createUIComponents() {
+        panelPrincipal = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                try {
+                    ImageIcon image = new ImageIcon(Objects.requireNonNull(getClass().getResource("/imagenes/img.png")));
+                    if (image.getImage() != null) {
+                        g.drawImage(image.getImage(), 0, 0, getWidth(), getHeight(), this);
+                    }
+                } catch (Exception e) {
+                    System.err.println("No se pudo cargar la imagen de fondo");
+                }
+            }
+        };
+
     }
 }

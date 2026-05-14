@@ -1,6 +1,5 @@
 package VentanaGuardarCliente;
 
-
 import main.ConexionMySQL;
 
 import javax.swing.*;
@@ -22,7 +21,7 @@ public class VentanaGuardarCliente extends JFrame {
         // Configuración básica de la ventana
         setContentPane(panel1);
         setTitle("Añadir Cliente");
-        setSize(400, 300);
+        setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -55,7 +54,7 @@ public class VentanaGuardarCliente extends JFrame {
             int resultado = conexion.ejecutarInsertDeleteUpdate(sql);
 
             if (resultado > 0) {
-                JOptionPane.showMessageDialog(null, "¡Cliente " + nombre + " guardado con éxito!");
+                JOptionPane.showMessageDialog(null, "Cliente " + nombre + " guardado con éxito");
                 limpiarCampos();
             }
 
@@ -73,12 +72,19 @@ public class VentanaGuardarCliente extends JFrame {
     }
 
     private void createUIComponents() {
-       panel1 = new JPanel();
-       @Override
-               protected void paintComponent(Graphics g){
-           super.paintComponent(g);
-            ImageIcon image = new ImageIcon(getClass().getResource("//imagenes/"));
-            g.drawImage(image.getImage(),0 , 0, getWidth(), getHeight(), this);
-        };
+       panel1 = new JPanel() {
+           @Override
+           protected void paintComponent(Graphics g) {
+               super.paintComponent(g);
+               try {
+                   ImageIcon image = new ImageIcon(getClass().getResource("//imagenes/tu_imagen.png"));
+                   if (image.getImage() != null) {
+                       g.drawImage(image.getImage(), 0, 0, getWidth(), getHeight(), this);
+                   }
+               } catch (Exception e) {
+                   System.err.println("No se pudo cargar la imagen de fondo");
+               }
+           }
+       };
     }
 }
