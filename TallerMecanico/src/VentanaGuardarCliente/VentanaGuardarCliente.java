@@ -1,4 +1,10 @@
+package VentanaGuardarCliente;
+
+
+import main.ConexionMySQL;
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,6 +16,7 @@ public class VentanaGuardarCliente extends JFrame {
     private JTextField txtTelefono;
     private JTextField txtEmail;
     private JButton btnGuardar;
+    private JButton button1;
 
     public VentanaGuardarCliente() {
         // Configuración básica de la ventana
@@ -17,6 +24,7 @@ public class VentanaGuardarCliente extends JFrame {
         setTitle("Añadir Cliente");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
         // Acción del botón
         btnGuardar.addActionListener(new ActionListener() {
@@ -34,7 +42,6 @@ public class VentanaGuardarCliente extends JFrame {
         String tel = txtTelefono.getText();
         String email = txtEmail.getText();
 
-        // 2. Creamos la conexión (usando tu clase ConexionMySQL)
         ConexionMySQL conexion = new ConexionMySQL("root", "", "mecanico");
 
         try {
@@ -63,5 +70,15 @@ public class VentanaGuardarCliente extends JFrame {
         txtNombre.setText("");
         txtTelefono.setText("");
         txtEmail.setText("");
+    }
+
+    private void createUIComponents() {
+       panel1 = new JPanel();
+       @Override
+               protected void paintComponent(Graphics g){
+           super.paintComponent(g);
+            ImageIcon image = new ImageIcon(getClass().getResource("//imagenes/"));
+            g.drawImage(image.getImage(),0 , 0, getWidth(), getHeight(), this);
+        };
     }
 }

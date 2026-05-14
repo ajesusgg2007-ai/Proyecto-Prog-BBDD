@@ -1,3 +1,8 @@
+package main;
+
+import VentanaGuardarCliente.VentanaGuardarCliente;
+import VentanaTitulo.VentanaTitulo;
+
 public class Main {
     public static void main(String[] args) {
         // Sustituye con tus datos reales de MySQL
@@ -7,8 +12,9 @@ public class Main {
 
         ConexionMySQL conexion = new ConexionMySQL("root", "", "mecanico");
 
-        VentanaGuardarCliente ventana = new VentanaGuardarCliente();
+        VentanaTitulo ventana = new VentanaTitulo();
         ventana.setVisible(true);
+
 
     }
 
