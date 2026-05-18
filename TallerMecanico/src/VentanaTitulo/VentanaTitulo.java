@@ -10,6 +10,7 @@ import java.util.Objects;
 public class VentanaTitulo extends JFrame {
     private JPanel panelPrincipal;
     private JButton btnabrirGuardarCliente;
+    private JButton registrarCocheButton;
 
     public VentanaTitulo() {
         setTitle("Mecánicos Salazar");
@@ -42,7 +43,7 @@ public class VentanaTitulo extends JFrame {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 try {
-                    ImageIcon image = new ImageIcon(Objects.requireNonNull(getClass().getResource("/imagenes/img.png")));
+                    ImageIcon image = new ImageIcon(Objects.requireNonNull(getClass().getResource("/imagenes/title.png")));
                     if (image.getImage() != null) {
                         g.drawImage(image.getImage(), 0, 0, getWidth(), getHeight(), this);
                     }
