@@ -10,12 +10,10 @@ import java.awt.event.ActionListener;
 public class VentanaGuardarCliente extends JFrame {
     private JPanel panel1;
     // Campos de texto para que el usuario escriba
-    private JTextField txtId;
     private JTextField txtNombre;
     private JTextField txtTelefono;
     private JTextField txtEmail;
     private JButton btnGuardar;
-    private JButton button1;
 
     public VentanaGuardarCliente() {
         // Configuración básica de la ventana
@@ -36,7 +34,7 @@ public class VentanaGuardarCliente extends JFrame {
 
     private void guardarCliente() {
         // 1. Recogemos los valores de los cuadros de texto
-        String id = txtId.getText();
+
         String nombre = txtNombre.getText();
         String tel = txtTelefono.getText();
         String email = txtEmail.getText();
@@ -48,8 +46,8 @@ public class VentanaGuardarCliente extends JFrame {
 
             // 3. Montamos la consulta SQL con los valores recogidos
             // IMPORTANTE: Los textos van entre comillas simples ''
-            String sql = "INSERT INTO clientes (ID_Cliente, Nombre, Telefono, Email) VALUES ("
-                    + id + ", '" + nombre + "', " + tel + ", '" + email + "')";
+            String sql = "INSERT INTO clientes (Nombre, Telefono, Email) VALUES (' "+
+                    nombre + "', " + tel + ", '" + email + "')";
 
             int resultado = conexion.ejecutarInsertDeleteUpdate(sql);
 
@@ -65,7 +63,6 @@ public class VentanaGuardarCliente extends JFrame {
     }
 
     private void limpiarCampos() {
-        txtId.setText("");
         txtNombre.setText("");
         txtTelefono.setText("");
         txtEmail.setText("");
