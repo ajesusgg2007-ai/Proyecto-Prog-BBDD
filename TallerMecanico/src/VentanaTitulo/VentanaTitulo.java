@@ -1,6 +1,8 @@
 package VentanaTitulo;
 
 import VentanaGuardarCliente.VentanaGuardarCliente;
+import VentanaRegistrarCoche.VentanaRegistrarCoche;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -33,6 +35,20 @@ public class VentanaTitulo extends JFrame {
                 // 3. (Opcional) Cerramos o minimizamos la ventana actual
                  dispose();
                  setLocationRelativeTo(null);
+            }
+        });
+
+        registrarCocheButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Instanciamos la ventana de registro de coche
+                VentanaRegistrarCoche registrarCoche = new VentanaRegistrarCoche();
+
+                // La hacemos visible en la pantalla
+                registrarCoche.setVisible(true);
+
+                // Opcional: Cerramos la ventana principal actual para que no se queden amontonadas
+                dispose();
             }
         });
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2026 a las 21:50:53
+-- Tiempo de generación: 22-05-2026 a las 17:23:00
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -34,6 +34,13 @@ CREATE TABLE `clientes` (
   `Email` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`ID_Cliente`, `Nombre`, `Telefono`, `Email`) VALUES
+(1, ' Salvador Galán', 123456, 'a@ies.es');
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +58,13 @@ CREATE TABLE `vehículos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Volcado de datos para la tabla `vehículos`
+--
+
+INSERT INTO `vehículos` (`Matrícula`, `ID_Cliente`, `Modelo`, `Marca`, `Arreglo`, `Limpiado`, `Fecha_Entrada`) VALUES
+('XM11', 1, 'Corolla', 'Toyota', 'Fallo Motor', 0, '2026-05-22');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -66,6 +80,16 @@ ALTER TABLE `clientes`
 ALTER TABLE `vehículos`
   ADD PRIMARY KEY (`Matrícula`),
   ADD KEY `ID_Cliente` (`ID_Cliente`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `ID_Cliente` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
