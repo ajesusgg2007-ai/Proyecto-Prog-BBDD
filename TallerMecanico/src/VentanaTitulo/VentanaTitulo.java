@@ -13,6 +13,7 @@ public class VentanaTitulo extends JFrame {
     private JPanel panelPrincipal;
     private JButton btnabrirGuardarCliente;
     private JButton registrarCocheButton;
+    private JButton verCochesButton;
 
     public VentanaTitulo() {
         setTitle("Mecánicos Salazar");
@@ -48,6 +49,19 @@ public class VentanaTitulo extends JFrame {
                 registrarCoche.setVisible(true);
 
                 // Opcional: Cerramos la ventana principal actual para que no se queden amontonadas
+                dispose();
+            }
+        });
+        verCochesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 1. Instanciamos la ventana que muestra la lista
+                VentanaVerCoche.VentanaVerCoche ventanaLista = new VentanaVerCoche.VentanaVerCoche();
+
+                // 2. La hacemos visible en pantalla
+                ventanaLista.setVisible(true);
+
+                // 3. Cerramos la ventana de título actual para mantener la pantalla limpia
                 dispose();
             }
         });
