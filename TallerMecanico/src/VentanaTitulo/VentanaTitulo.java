@@ -24,6 +24,16 @@ public class VentanaTitulo extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
+
+        btnabrirGuardarCliente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VentanaGuardarCliente Registrarcliente = new VentanaGuardarCliente();
+                Registrarcliente.setVisible(true);
+                dispose();
+            }
+        });
+
         // --- INICIALIZACIÓN SEGURA ---
         // Si el botón no se creó en el .form, lo creamos aquí
         if (borrarCocheButton == null) {
