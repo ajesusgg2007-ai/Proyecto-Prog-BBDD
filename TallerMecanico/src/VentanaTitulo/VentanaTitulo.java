@@ -2,6 +2,7 @@ package VentanaTitulo;
 
 import VentanaGuardarCliente.VentanaGuardarCliente;
 import VentanaRegistrarCoche.VentanaRegistrarCoche;
+import VentanaBorrarCoche.VentanaBorrarCoche;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +15,7 @@ public class VentanaTitulo extends JFrame {
     private JButton btnabrirGuardarCliente;
     private JButton registrarCocheButton;
     private JButton verCochesButton;
+    private JButton borrarCocheButton; // Declaración del botón
 
     public VentanaTitulo() {
         setTitle("Mecánicos Salazar");
@@ -22,46 +24,53 @@ public class VentanaTitulo extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
-        // Acción del botón
-        btnabrirGuardarCliente.addActionListener(new ActionListener() {
+        // --- INICIALIZACIÓN SEGURA ---
+        // Si el botón no se creó en el .form, lo creamos aquí
+        if (borrarCocheButton == null) {
+            borrarCocheButton = new JButton("Borrar Coche");
+            // En lugar de añadirlo al panel (que da error de Layout),
+            // asegúrate de que el botón exista y simplemente le ponemos la acción.
+        }
+        // -----------------------------
+
+        // Acción Borrar Coche
+        borrarCocheButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // 1. Creamos la instancia de la ventana de guardado
-                // Asegúrate de que el nombre de la clase sea exacto al de tu archivo
-                VentanaGuardarCliente GuardarCliente = new VentanaGuardarCliente();
-
-                // 2. La hacemos visible
-                GuardarCliente.setVisible(true);
-
-                // 3. (Opcional) Cerramos o minimizamos la ventana actual
-                 dispose();
-                 setLocationRelativeTo(null);
-            }
-        });
-
-        registrarCocheButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Instanciamos la ventana de registro de coche
-                VentanaRegistrarCoche registrarCoche = new VentanaRegistrarCoche();
-
-                // La hacemos visible en la pantalla
-                registrarCoche.setVisible(true);
-
-                // Opcional: Cerramos la ventana principal actual para que no se queden amontonadas
+                VentanaBorrarCoche ventanaBorrado = new VentanaBorrarCoche();
+                ventanaBorrado.setVisible(true);
                 dispose();
             }
         });
+
+        // ... (resto de tus otros botones)
+
+        // Acción Registrar Coche
+        registrarCocheButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VentanaRegistrarCoche registrarCoche = new VentanaRegistrarCoche();
+                registrarCoche.setVisible(true);
+                dispose();
+            }
+        });
+
+        // Acción Ver Coches
         verCochesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // 1. Instanciamos la ventana que muestra la lista
                 VentanaVerCoche.VentanaVerCoche ventanaLista = new VentanaVerCoche.VentanaVerCoche();
-
-                // 2. La hacemos visible en pantalla
                 ventanaLista.setVisible(true);
+                dispose();
+            }
+        });
 
-                // 3. Cerramos la ventana de título actual para mantener la pantalla limpia
+        // Acción Borrar Coche (Lógica segura)
+        borrarCocheButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VentanaBorrarCoche ventanaBorrado = new VentanaBorrarCoche();
+                ventanaBorrado.setVisible(true);
                 dispose();
             }
         });
@@ -82,6 +91,5 @@ public class VentanaTitulo extends JFrame {
                 }
             }
         };
-
     }
 }
