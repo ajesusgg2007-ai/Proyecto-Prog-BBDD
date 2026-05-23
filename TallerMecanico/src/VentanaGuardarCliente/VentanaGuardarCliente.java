@@ -14,6 +14,7 @@ public class VentanaGuardarCliente extends JFrame {
     private JTextField txtTelefono;
     private JTextField txtEmail;
     private JButton btnGuardar;
+    private JButton Volver;
 
     public VentanaGuardarCliente() {
         // Configuración básica de la ventana
@@ -28,6 +29,19 @@ public class VentanaGuardarCliente extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 guardarCliente();
+            }
+        });
+        Volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 1. Creamos la ventana de título de nuevo
+                VentanaTitulo.VentanaTitulo ventanaPrincipal = new VentanaTitulo.VentanaTitulo();
+
+                // 2. La hacemos visible
+                ventanaPrincipal.setVisible(true);
+
+                // 3. Destruimos la ventana actual de registrar coche para liberar memoria
+                dispose();
             }
         });
     }
@@ -60,6 +74,8 @@ public class VentanaGuardarCliente extends JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Error al guardar: " + ex.getMessage());
         }
+
+
     }
 
     private void limpiarCampos() {

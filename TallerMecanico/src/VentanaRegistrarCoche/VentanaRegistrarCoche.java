@@ -16,6 +16,7 @@ public class VentanaRegistrarCoche extends JFrame {
     private JRadioButton siRadioButton;
     private JRadioButton noRadioButton;
     private JTextField Telefono;
+    private JButton Volver;
 
     // Constructor de la ventana
     public VentanaRegistrarCoche() {
@@ -37,6 +38,20 @@ public class VentanaRegistrarCoche extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 registrarCocheEnBaseDeDatos();
+            }
+        });
+
+        Volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 1. Creamos la ventana de título de nuevo
+                VentanaTitulo.VentanaTitulo ventanaPrincipal = new VentanaTitulo.VentanaTitulo();
+
+                // 2. La hacemos visible
+                ventanaPrincipal.setVisible(true);
+
+                // 3. Destruimos la ventana actual de registrar coche para liberar memoria
+                dispose();
             }
         });
     }
