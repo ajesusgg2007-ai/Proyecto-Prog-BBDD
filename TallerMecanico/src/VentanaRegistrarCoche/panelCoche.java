@@ -34,7 +34,7 @@ public class panelCoche extends JPanel {
 
         ImageIcon iconRueda = new ImageIcon(getClass().getResource("/imagenes/CocheRueda.png"));
         lblLlanta = new JLabel(iconRueda);
-        lblLlanta.setBounds(0, 0, 300, 400);
+        lblLlanta.setBounds(0, 0, 400, 400);
         lblLlanta.setVisible(false);
 
         //Capas
