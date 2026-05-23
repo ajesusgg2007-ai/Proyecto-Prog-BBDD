@@ -84,20 +84,5 @@ public class VentanaGuardarCliente extends JFrame {
         txtEmail.setText("");
     }
 
-    private void createUIComponents() {
-       panel1 = new JPanel() {
-           @Override
-           protected void paintComponent(Graphics g) {
-               super.paintComponent(g);
-               try {
-                   ImageIcon image = new ImageIcon(getClass().getResource("//imagenes/tu_imagen.png"));
-                   if (image.getImage() != null) {
-                       g.drawImage(image.getImage(), 0, 0, getWidth(), getHeight(), this);
-                   }
-               } catch (Exception e) {
-                   System.err.println("No se pudo cargar la imagen de fondo");
-               }
-           }
-       };
-    }
+
 }

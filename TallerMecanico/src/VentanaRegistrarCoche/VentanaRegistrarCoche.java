@@ -3,6 +3,9 @@ package VentanaRegistrarCoche;
 import main.ConexionMySQL;
 
 import javax.swing.*;
+import javax.swing.event.DocumentListener;
+import javax.swing.event.DocumentEvent;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,13 +20,16 @@ public class VentanaRegistrarCoche extends JFrame {
     private JRadioButton noRadioButton;
     private JTextField Telefono;
     private JButton Volver;
+    private JPanel panelCoche;
+
+
 
     // Constructor de la ventana
     public VentanaRegistrarCoche() {
         // Asignamos el panel principal (obligatorio en el diseñador de IntelliJ)
         setContentPane(panel1);
         setTitle("Registrar Coche");
-        setSize(400, 470);
+        setSize(800, 470);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -54,6 +60,32 @@ public class VentanaRegistrarCoche extends JFrame {
                 dispose();
             }
         });
+        panelCoche panelintercattivo= new panelCoche();
+        panelCoche.setLayout(new BorderLayout());
+        panelCoche.add(panelintercattivo, BorderLayout.CENTER);
+
+        panelCoche.revalidate();
+        panelCoche.repaint();
+
+        Arreglo.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                verificarTexto(); }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                verificarTexto(); }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                verificarTexto(); }
+
+            private void verificarTexto() {
+                // Llamamos correctamente a 'panelintercattivo' que es el que gestiona las imágenes
+                panelintercattivo.actualizar(Arreglo.getText());
+            }
+        });
+
     }
 
     private void registrarCocheEnBaseDeDatos() {
@@ -117,6 +149,7 @@ public class VentanaRegistrarCoche extends JFrame {
                 limpiarCampos();
             }
 
+
             conexion.desconectar();
 
         } catch (java.sql.SQLException ex) {
@@ -124,6 +157,7 @@ public class VentanaRegistrarCoche extends JFrame {
             ex.printStackTrace();
         }
     }
+
 
     // Método opcional para vaciar el formulario tras un registro exitoso
     private void limpiarCampos() {
@@ -133,4 +167,6 @@ public class VentanaRegistrarCoche extends JFrame {
         Arreglo.setText("");
         noRadioButton.setSelected(true);
     }
+
+
 }
